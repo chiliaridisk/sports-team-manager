@@ -19,7 +19,7 @@ export const playerRepository = {
     },
 
     update: async (id: string, data: Partial<IPlayer>) => {
-        return Player.findByIdAndUpdate(id, data, { new: true, runValidators: true }).populate('user' , 'name email');
+        return Player.findByIdAndUpdate(id, data, { returnDocument: 'after', runValidators: true }).populate('user' , 'name email');
    },
 
    delete: async (id: string) => {
