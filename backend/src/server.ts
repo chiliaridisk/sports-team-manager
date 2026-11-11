@@ -4,11 +4,13 @@ import cors from 'cors';
 import { connectDB } from './config/db';
 import authRoutes from './routes/authRoutes';
 import playerRoutes from './routes/playerRoutes';
+import trainingRoutes from './routes/trainingRoutes';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/trainings', trainingRoutes);
 app.use('/api/players', playerRoutes);
 app.use('/api/auth', authRoutes);
 
