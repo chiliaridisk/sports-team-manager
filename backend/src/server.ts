@@ -5,6 +5,7 @@ import { connectDB } from './config/db';
 import authRoutes from './routes/authRoutes';
 import playerRoutes from './routes/playerRoutes';
 import trainingRoutes from './routes/trainingRoutes';
+import taskRoutes from './routes/taskRoutes';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use('/api/trainings', trainingRoutes);
 app.use('/api/players', playerRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Sports Team Manager API is running' });
